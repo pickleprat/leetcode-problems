@@ -3,20 +3,13 @@ package main
 import "errors"
 
 type Stack struct {
-	Size 	int  
 	top   	int
 	stack 	[] byte
 }
 
-func (st *Stack) Push(num byte) (byte, error) {
-	// returns -1 if the stack is at-capacity. Otherwise returns the number pushed
-	if len(st.stack) >= st.Size {
-		return 0, errors.New("stack overflow error"); 
-	}
-
-	st.stack = append(st.stack, num)
-	st.top++
-	return num, nil 
+func (st *Stack) Push(num byte) byte  {
+	st.stack = append(st.stack, num); st.top++; 
+	return num  
 }
 
 func (st *Stack) View() (byte, error) {
@@ -40,8 +33,7 @@ func (st *Stack) Pop() (byte, error) {
 
 func NewStack(size int) *Stack {
 	return &Stack{
-		Size:  size,
-		stack: make([]byte, size),
+		stack: make([]byte, 0),
 		top:   -1,
 	}
 }
