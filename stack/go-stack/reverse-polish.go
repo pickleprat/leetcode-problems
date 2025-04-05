@@ -1,5 +1,7 @@
 package main 
 
+import "fmt"; 
+
 // a way to execute an operation between two numbers 
 func Execute(operand string, left int, right int) int {
     switch operand {
