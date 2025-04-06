@@ -1,13 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 
 func main() {
-	s1 := "{[{()}]}"; 
-	s2 := "{{[{()}]}"; 
+	cars := [] Car {
+		{ 	Position: 10, Speed: 2 }, 
+		{	Position: 8, Speed: 4  }, 
+		{ 	Position: 0, Speed: 1 }, 
+		{ 	Position: 5, Speed: 1 }, 
+		{	Position: 3, Speed: 3 }, 
+	}; 
 
-	if isValid(s1) && !isValid(s2)  {
-		fmt.Printf("The strings %s and %s  were correctly evaluated.\n", s1, s2); 
-	} 
+	slices.SortStableFunc(cars, CompareCar); 
+	fmt.Printf("Cars sorted: %+v", cars); 
 }
