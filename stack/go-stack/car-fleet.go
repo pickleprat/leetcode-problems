@@ -1,8 +1,8 @@
-package main 
+package main
 
 import (
-    "slices"
-    "cmp"
+	"cmp"
+	"slices"
 )
 
 type Car struct {

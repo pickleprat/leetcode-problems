@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"slices"
-)
-
 
 func main() {
 	cars := [] Car {
@@ -15,6 +10,12 @@ func main() {
 		{	Position: 3, Speed: 3 }, 
 	}; 
 
-	slices.SortStableFunc(cars, CompareCar); 
-	fmt.Printf("Cars sorted: %+v", cars); 
+	positions := make([] int, 0); 
+	speeds := make([] int, 0); 
+	for _, car := range cars {
+		positions = append(positions, car.Position); 
+		speeds = append(speeds, car.Speed); 
+	} 
+
+	carFleet(12, positions, speeds); 
 }
